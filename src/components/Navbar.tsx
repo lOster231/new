@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Courses', href: '/courses' },
+    { name: 'Courses', href: '/course-selector' },
     { name: 'Features', href: '/features' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'About', href: '/about' },
@@ -178,6 +178,26 @@ const Navbar: React.FC = () => {
                   <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-green-400 group-hover:w-full transition-all duration-300"></div>
                 </a>
               ))}
+                <a 
+                  href="/course-selector" 
+                  className="flex items-center space-x-3 px-3 py-3 rounded-xl hover:bg-white/10 transition-all duration-200 group"
+                >
+                  <div className="p-2 bg-green-500/20 rounded-lg group-hover:bg-green-500/30 transition-colors duration-200">
+                    <BookOpen className="h-4 w-4 text-green-400" />
+                  </div>
+                  <span className="text-white font-medium">My Courses</span>
+                </a>
+                
+                <a 
+                  href="/friends" 
+                  className="flex items-center space-x-3 px-3 py-3 rounded-xl hover:bg-white/10 transition-all duration-200 group"
+                >
+                  <div className="p-2 bg-cyan-500/20 rounded-lg group-hover:bg-cyan-500/30 transition-colors duration-200">
+                    <Users className="h-4 w-4 text-cyan-400" />
+                  </div>
+                  <span className="text-white font-medium">Friends</span>
+                </a>
+                
             </div>
 
             {/* Enhanced Auth Section */}
@@ -283,6 +303,20 @@ const Navbar: React.FC = () => {
                     >
                       <Settings className="h-4 w-4" />
                       <span className="font-medium">Edit Profile</span>
+                    </a>
+                    <a 
+                      href="/course-selector"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 font-medium px-3 py-2 rounded-lg hover:bg-white/10"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      My Courses
+                    </a>
+                    <a 
+                      href="/friends"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 font-medium px-3 py-2 rounded-lg hover:bg-white/10"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Friends
                     </a>
                     {/* New: Link to Admin Panel (only for authorized users) */}
                     {hasPrivilege(['Junior Support', 'Support', 'Senior Support', 'Admin', 'Owner']) && (

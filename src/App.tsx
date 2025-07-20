@@ -9,6 +9,9 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import DashboardPage from './pages/DashboardPage';
 import SupportPage from './pages/SupportPage';
+import CourseSelectorPage from './pages/CourseSelectorPage';
+import CoursePage from './pages/CoursePage';
+import FriendsPage from './pages/FriendsPage';
 import VerifyEmailModal from './components/VerifyEmailModal';
 import VerificationResultPage from './pages/VerificationResultPage';
 import EditProfilePage from './pages/EditProfilePage';
@@ -32,6 +35,9 @@ const AppContent: React.FC = () => {
                     <Route path="/contact" element={<ContactPage />} />
                     <Route path="/dashboard" element={<DashboardPage />} />
                     <Route path="/support" element={<SupportPage />} />
+                    <Route path="/course-selector" element={<CourseSelectorPage />} />
+                    <Route path="/course/:courseId" element={<CoursePage />} />
+                    <Route path="/friends" element={<FriendsPage />} />
                     <Route path="/verification-result" element={<VerificationResultPage />} />
                     {/* Profile Routes */}
                     <Route path="/profile/edit" element={<EditProfilePage />} />
