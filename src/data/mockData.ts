@@ -462,3 +462,7 @@ export const getChatMessages = (userId1: string, userId2: string): ChatMessage[]
     (msg.senderId === userId2 && msg.receiverId === userId1)
   ).sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
 };
+
+export const addChatMessage = (message: ChatMessage): void => {
+  mockChatMessages.push(message);
+};
